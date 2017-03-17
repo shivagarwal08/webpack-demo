@@ -1,0 +1,14 @@
+{
+    "name": "webpack-starter",
+    "version": "1.0.0",
+    "description": "webpack project starter",
+    "main": "index.js",
+    "scripts": {
+        "dev": "webpack -d --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "webpack": "^2.2.1"
+    }
+}

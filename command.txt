@@ -1,0 +1,3 @@
+1. f1 'Open workspace settings' exclude 'node_modules', '.vscode'
+2. webpack ./src/app.js ./dist/bundle.js -p --watch
+3. Create webpack.config.js 

@@ -4,7 +4,8 @@
     "description": "webpack project starter",
     "main": "index.js",
     "scripts": {
-        "dev": "webpack -d --watch"
+        "dev": "webpack -d --watch",
+        "prod": "webpack -p"
     },
     "author": "",
     "license": "ISC",

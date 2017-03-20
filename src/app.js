@@ -1,3 +1,3 @@
 const css = require('./app.scss');
 
-console.log('Hello from app.js webpack is watching');
+console.log('Hello from app.js and webpackdev server');

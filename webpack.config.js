@@ -1,4 +1,5 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
@@ -7,9 +8,14 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     module: {
-        rules: [
-            { test: /\.scss/, use: ['style-loader', 'css-loader', 'sass-loader'] }
-        ]
+        rules: [{
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'sass-loader'],
+                publicPath: '/dist'
+            })
+        }]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -19,6 +25,11 @@ module.exports = {
             },
             hash: true,
             template: './src/index.html'
+        }),
+        new ExtractTextPlugin({
+            filename: "app.css",
+            disable: false,
+            allChunks: true
         })
     ]
 }
